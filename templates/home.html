@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1 data-aos="zoom-in">Welcome to the Home Page</h1>
+<a href="{{ url_for('login') }}" data-aos="fade-right">Login</a>
+<a href="{{ url_for('register') }}" data-aos="fade-left">Register</a>
+{% endblock %}

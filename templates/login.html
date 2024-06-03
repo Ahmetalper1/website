@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1 data-aos="zoom-in">Login</h1>
+<form method="POST" data-aos="fade-up">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+  <br>
+  <input type="submit" value="Login">
+</form>
+<a href="{{ url_for('register') }}" data-aos="fade-left">Don't have an account? Register</a>
+{% endblock %}
