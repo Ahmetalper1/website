@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">My Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+        <h2>Notes</h2>
+        <form action="{{ url_for('home') }}" method="post">
+            <div class="form-group">
+                <label for="note">Add Note:</label>
+                <textarea id="note" name="note" required></textarea>
+            </div>
+            <button type="submit">Add Note</button>
+        </form>
+        <h3>Your Notes:</h3>
+        <ul class="notes">
+            {% for note in notes %}
+                <li>{{ note['note'] }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Tasks</h2>
+        <form action="{{ url_for('home') }}" method="post">
+            <div class="form-group">
+                <label for="task">Add Task:</label>
+                <textarea id="task" name="task" required></textarea>
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+        <h3>Your Tasks:</h3>
+        <ul class="tasks">
+            {% for task in tasks %}
+                <li class="{{ 'completed' if task['is_completed'] else '' }}">
+                    {{ task['task'] }}
+                    <div class="actions">
+                        <a href="{{ url_for('complete_task', task_id=task['id']) }}">Complete</a>
+                        <a href="{{ url_for('delete_task', task_id=task['id']) }}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

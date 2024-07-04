@@ -1,0 +1,151 @@
+/* Genel stiller */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 30px;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 20px 30px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background: #f9f9f9;
+  color: #007bff;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+h1, h2, h3 {
+  color: #333;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.form-group button:hover {
+  background: #0056b3;
+  transition: background 0.3s ease-in-out;
+}
+
+ul.notes, ul.tasks {
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+ul.notes li, ul.tasks li {
+  background: white;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+ul.notes li:hover, ul.tasks li:hover {
+  transform: translateY(-5px);
+}
+
+ul.tasks li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+ul.tasks li .actions {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+ul.tasks li .actions a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+ul.tasks li .actions a:hover {
+  color: #0056b3;
+}
+
+.button-primary {
+  background: #28a745;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.button-primary:hover {
+  background: #218838;
+  transition: background 0.3s ease-in-out;
+}

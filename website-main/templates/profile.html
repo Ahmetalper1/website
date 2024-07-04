@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">My Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>My Profile</h1>
+        <p>Username: {{ user['username'] }}</p>
+        <p>Age: {{ user['age'] }}</p>
+        <p>
+            Profile Picture: <br>
+            {% if user['profile_pic'] %}
+                <img src="{{ url_for('static', filename='uploads/' + user['profile_pic']) }}" alt="Profile Picture" width="150">
+            {% else %}
+                No profile picture uploaded.
+            {% endif %}
+        </p>
+        <form action="{{ url_for('profile') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="age">Update Age:</label>
+                <input type="number" id="age" name="age" value="{{ user['age'] }}" required>
+                <button type="submit" name="update_age" value="update_age">Update Age</button>
+            </div>
+            <div class="form-group">
+                <label for="profile_pic">Upload Profile Picture:</label>
+                <input type="file" id="profile_pic" name="profile_pic">
+            </div>
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</body>
+</html>
